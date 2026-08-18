@@ -5,11 +5,15 @@ def listaUsers():
     conn = conectar()
     cursor = conn.cursor()
 
-    cursor.execute("SELECT id_user, nome, pontuacao FROM usuarios")
+    cursor.execute("""
+        SELECT nome, pontuacao
+        FROM usuarios 
+        ORDER BY pontuacao DESC
+        LIMIT 5;""")
     resultados = cursor.fetchall()
 
     for usuario in resultados:
-        print(f"ID: {usuario[0]} | Nome: {usuario[1]} | Pontuação: {usuario[2]}")
+        print(f"Nome: {usuario[0]} | Pontuação: {usuario[1]}")
 
     time.sleep(5)
     cursor.close()

@@ -4,6 +4,7 @@ import time
 from SQLxPython import *
 from cadastros import *
 from deletar import *
+from levels import *
 
 def fazerLogin():
     while True:
@@ -59,7 +60,7 @@ def menuUser(usuario):
         opcao = input()
         
         if opcao == "1":
-            ...
+            level1()
         elif opcao == "2":
             print(f"ID: {usuario['id_user']} | Usuário: {usuario['nome']} | Pontuação: {usuario['pontuacao']}")
             input("Precione Enter para voltar")

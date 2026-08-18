@@ -1,3 +1,5 @@
+import time
+
 def level1():
     print("level 1:")
     chances = 3 
@@ -116,6 +118,6 @@ def level1():
                 continue
 
         print(f"Fim do Level 1! Chances restantes: {chances}")
+        time.sleep(5)
         break
     
-level1()
