@@ -106,7 +106,7 @@ def level1():
             elif resposta1_5 in ["a", "b"]:
                 print("resposta errada\n")
                 chances -= 1
-                print(f"Chances restantes: {chances}")
+                
                 if chances == 0:
                     print("Você perdeu todas as chances! Game Over.")   
                     return
