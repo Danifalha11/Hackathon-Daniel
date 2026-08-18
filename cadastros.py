@@ -9,7 +9,7 @@ def cadastrarUser():
     user = input("Digite o nome de usuário (mínimo 5 | máximo 25): ")
     senha = input("Digite sua senha (mínimo 8): ")
 
-    sql = "INSERT INTO usuarios (nome, senha) VALUES (%s, %s)"
+    sql = "INSERT INTO usuarios (nome, senha, pontuacao) VALUES (%s, %s, 0)"
 
     try:
         if validarUser(user,senha):

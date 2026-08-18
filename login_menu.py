@@ -3,6 +3,7 @@ import os
 import time
 from SQLxPython import *
 from cadastros import *
+from deletar import *
 
 def fazerLogin():
     while True:
@@ -10,7 +11,7 @@ def fazerLogin():
         print("--------LOGIN--------")
         print("1 - Já tenho uma conta")
         print("2 - Criar uma conta")
-        escolha = input("")
+        escolha = input()
 
         if escolha == "1":
             user = input("\nDigite seu usuário: ")
@@ -25,7 +26,7 @@ def fazerLogin():
                 usuario = cursor.fetchone()
 
                 if usuario:
-                    print(f"Login realizado, bem vindo {usuario['nome']}")
+                    print(f"Login realizado com sucesso!")
                     time.sleep(3)
                     return usuario
                 else:
@@ -45,4 +46,28 @@ def fazerLogin():
             print("Opção inválida")
             time.sleep(2)
 
-fazerLogin()
+
+def menuUser(usuario):
+    while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print(f"------BEM VINDO {usuario['nome']}!------")
+        print("----O QUE VOCÊ DESEJA FAZER?------")
+        print("\n1 - ReciclaQuiz")
+        print("2 - Ver perfil")
+        print("3 - Deletar perfil")
+        print("4 - Sair")
+        opcao = input()
+        
+        if opcao == "1":
+            ...
+        elif opcao == "2":
+            print(f"ID: {usuario['id_user']} | Usuário: {usuario['nome']} | Pontuação: {usuario['pontuacao']}")
+            input("Precione Enter para voltar")
+        elif opcao == "3":
+            deletarUsuario(id_user=usuario['id_user'])
+            break
+        elif opcao == "4":
+            print("Saindo...")
+            time.sleep(2)
+            break
+      
