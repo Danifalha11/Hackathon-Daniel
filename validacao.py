@@ -18,6 +18,11 @@ def validarUser(user, senha):
         time.sleep(3)
         return False
 
+    if senha.strip() == "":
+        print("Campo vazio em Senha")
+        time.sleep(3)
+        return False
+
     if len(senha) < 8:
         print("Senha muito pequena")
         time.sleep(3)
