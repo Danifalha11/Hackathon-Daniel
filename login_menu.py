@@ -5,6 +5,7 @@ from SQLxPython import *
 from cadastros import *
 from deletar import *
 from levels import *
+from lista import *
 
 def fazerLogin():
     while True:
@@ -55,19 +56,22 @@ def menuUser(usuario):
         print("----O QUE VOCÊ DESEJA FAZER?------")
         print("\n1 - ReciclaQuiz")
         print("2 - Ver perfil")
-        print("3 - Deletar perfil")
-        print("4 - Sair")
+        print("3 - Ver classificação")
+        print("4 - Deletar perfil")
+        print("5 - Sair")
         opcao = input()
         
         if opcao == "1":
-            level1()
+            usuario['pontuacao'] = level1(usuario)
         elif opcao == "2":
             print(f"ID: {usuario['id_user']} | Usuário: {usuario['nome']} | Pontuação: {usuario['pontuacao']}")
             input("Precione Enter para voltar")
         elif opcao == "3":
+            listaUsers()
+        elif opcao == "4":
             deletarUsuario(id_user=usuario['id_user'])
             break
-        elif opcao == "4":
+        elif opcao == "5":
             print("Saindo...")
             time.sleep(2)
             break

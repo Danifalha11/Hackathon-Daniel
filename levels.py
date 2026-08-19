@@ -1,13 +1,16 @@
 import time
 import os
 from SQLxPython import *
-pontos = 0
+from login_menu import *
 
-def level1():
+def level1(usuario):
+    pontos = usuario['pontuacao']
     conn = conectar()
     cursor = conn.cursor(dictionary=True)
 
     os.system('cls' if os.name == 'nt' else 'clear')
+    print("Bem vindo ao ReciclaQuiz! O jogo é simples, 3 chances para acertar 5 perguntas sobre reciclagem e sustentabilidade. Boa sorte!")
+    time.sleep(5)
     print("level 1:")
     time.sleep(1.5)
     chances = 3 
@@ -25,9 +28,9 @@ def level1():
             print("c) 2 cores apenas")
             resposta1_1 = input("qual é a resposta correta? ").strip().lower()
             if resposta1_1 == "b":
-                print("resposta certa\n")
-                print(f"Chances restantes: {chances}")
                 pontos += 1
+                print("resposta certa\n")
+                print(f"Pontuação atual: {pontos}")
                 time.sleep(2)
                 break
             elif resposta1_1 in ["a", "c"]:
@@ -51,9 +54,9 @@ def level1():
             print("c) Energia Geotérmica")
             resposta1_2 = input("qual é a resposta correta? ").strip().lower()
             if resposta1_2 == "b":
-                print("resposta certa\n")
-                print(f"Chances restantes: {chances}")
                 pontos += 1
+                print("resposta certa\n")
+                print(f"Pontuação atual: {pontos}")
                 time.sleep(2)
                 break
             elif resposta1_2 in ["a", "c"]:
@@ -76,10 +79,10 @@ def level1():
             print("c) Energia Solar")
             resposta1_3 = input("qual é a resposta correta? ").strip().lower()
             if resposta1_3 == "a":
-                print("resposta certa\n")
-                print(f"Chances restantes: {chances}")
                 pontos += 1
-                time.sleep(2)
+                print("resposta certa\n")
+                print(f"Pontuação atual: {pontos}")
+                time.sleep(1)
                 break
             elif resposta1_3 in ["b", "c"]:
                 print("resposta errada\n")
@@ -88,8 +91,15 @@ def level1():
                 time.sleep(2)
                 if chances == 0:
                     print("Você perdeu todas as chances! Game Over.")
-                    time.sleep(5)   
-                    return
+                    time.sleep(5)
+                    comando1 = "UPDATE usuarios SET pontuacao = %s WHERE id_user = %s"
+                    cursor.execute(comando1, (pontos, usuario['id_user']))
+                    conn.commit()
+
+                    cursor.close()
+                    conn.close()
+
+                    return pontos
                 break
             else:
                 print("escolha uma opção válida\n")
@@ -105,9 +115,9 @@ def level1():
             print("c) Apenas grama sintética")
             resposta1_4 = input("qual é a resposta correta? ").strip().lower()
             if resposta1_4 == "b":
-                print("resposta certa\n")
-                print(f"Chances restantes: {chances}")
                 pontos += 1
+                print("resposta certa\n")
+                print(f"Pontuação atual: {pontos}")
                 time.sleep(2)
                 break
             elif resposta1_4 in ["a", "c"]:
@@ -117,8 +127,15 @@ def level1():
                 time.sleep(2)
                 if chances == 0:
                     print("Você perdeu todas as chances! Game Over.")
-                    time.sleep(5)   
-                    return
+                    time.sleep(5)
+                    comando2 = "UPDATE usuarios SET pontuacao = %s WHERE id_user = %s"
+                    cursor.execute(comando2, (pontos, usuario['id_user']))
+                    conn.commit()
+
+                    cursor.close()
+                    conn.close()
+
+                    return pontos
                 break
             else:
                 print("escolha uma opção válida\n")
@@ -134,9 +151,9 @@ def level1():
             print("c) Azul")
             resposta1_5 = input("qual é a resposta correta? ").strip().lower()
             if resposta1_5 == "c":
-                print("resposta certa\n")
-                print(f"Chances restantes: {chances}")
                 pontos += 1
+                print("resposta certa\n")
+                print(f"Pontuação atual: {pontos}")
                 time.sleep(2)
                 break
             elif resposta1_5 in ["a", "b"]:
@@ -147,17 +164,24 @@ def level1():
                 if chances == 0:
                     print("Você perdeu todas as chances! Game Over.")
                     time.sleep(5)
-                    return
+                    comando3 = "UPDATE usuarios SET pontuacao = %s WHERE id_user = %s"
+                    cursor.execute(comando3, (pontos, usuario['id_user']))
+                    conn.commit()
+
+                    cursor.close()
+                    conn.close()
+
+                    return pontos
                 break
             else:
                 print("escolha uma opção válida\n")
                 time.sleep(1)
                 continue
 
-        sql = "UPDATE usuarios SET pontuacao = pontuacao + %s WHERE id_user = %s"
+        sql = "UPDATE usuarios SET pontuacao = %s WHERE id_user = %s"
         cursor.execute(sql, (pontos, usuario['id_user']))
         conn.commit()
-        print(f"Fim do Level 1! Chances restantes: {chances}")
+        print(f"Fim do Level 1! Chances restantes: {chances} | Pontuação final: {pontos}")
         time.sleep(5)
-        break
-    
+        
+        return pontos
