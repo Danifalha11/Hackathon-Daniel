@@ -1,3 +1,4 @@
+from SQLxPython import *
 pontos = 0
 chances = 3
 def levels():
@@ -365,7 +366,9 @@ def levels():
         level2()
     if chances > 0:
         level3()
-   
-        
-    
+    sql = "UPDATE usuarios SET pontuacao = %s"
+    valores = (pontos)
+    cursor.execute(sql, valores)
+    conn.commit()
+
 levels()
