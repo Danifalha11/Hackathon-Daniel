@@ -64,7 +64,31 @@ def menuUser(usuario):
         opcao = input()
         
         if opcao == "1":
-            usuario['pontuacao'] = level1(usuario)
+            print("Iniciando o ReciclaQuiz...")
+            time.sleep(2)
+            print("Temos 3 niveis disponiveis:")
+            time.sleep(1)
+            print("1 - Fácil")
+            time.sleep(1)
+            print("2 - Médio")
+            time.sleep(1)
+            print("3 - Difícil")
+            time.sleep(2)
+            escolha_level = input("Escolha o nível que deseja jogar: ")
+            if escolha_level == "1":
+                usuario['pontuacao'] = level1(usuario)
+            elif escolha_level == "2":
+                if usuario['pontuacao'] >= 5:
+                    usuario['pontuacao'] = level2(usuario)
+                else:
+                    print("Tenha pelo menos 5 pontos para jogar o nível 2")
+                    time.sleep(2)
+            elif escolha_level == "3":
+                if usuario['pontuacao'] >= 10:
+                    usuario['pontuacao'] = level3(usuario)
+                else:
+                    print("Tenha pelo menos 10 pontos para jogar o nível 3")
+                    time.sleep(2)
         elif opcao == "2":
             print(f"ID: {usuario['id_user']} | Usuário: {usuario['nome']} | Pontuação: {usuario['pontuacao']}")
             input("Precione Enter para voltar")
