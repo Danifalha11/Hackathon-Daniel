@@ -1,5 +1,3 @@
-import time
-import os
 from SQLxPython import *
 from login_menu import *
 
@@ -120,7 +118,7 @@ def level1(usuario):
                 print(f"Pontuação atual: {pontos}")
                 time.sleep(2)
                 break
-            elif resposta1_4 in ["a", "c"]:
+            elif resposta in ["a", "c"]:
                 print("resposta errada\n")
                 chances -= 1
                 print(f"Chances restantes: {chances}")
@@ -139,7 +137,6 @@ def level1(usuario):
                 break
             else:
                 print("escolha uma opção válida\n")
-                time.sleep(1)
                 continue
 
         
@@ -156,7 +153,7 @@ def level1(usuario):
                 print(f"Pontuação atual: {pontos}")
                 time.sleep(2)
                 break
-            elif resposta1_5 in ["a", "b"]:
+            elif resposta in ["b", "c"]:
                 print("resposta errada\n")
                 chances -= 1
                 print(f"Chances restantes: {chances}")
@@ -175,7 +172,6 @@ def level1(usuario):
                 break
             else:
                 print("escolha uma opção válida\n")
-                time.sleep(1)
                 continue
 
         sql = "UPDATE usuarios SET pontuacao = %s WHERE id_user = %s"
