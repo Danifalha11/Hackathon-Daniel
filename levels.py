@@ -88,7 +88,6 @@ def level1(usuario):
                 chances -= 1
                 print(f"Chances restantes: {chances}")
                 time.sleep(2)
-                break
                 if chances == 0:
                     print("Você perdeu todas as chances! Game Over.")
                     time.sleep(5)
@@ -125,7 +124,6 @@ def level1(usuario):
                 chances -= 1
                 print(f"Chances restantes: {chances}")
                 time.sleep(2)
-                break
                 if chances == 0:
                     print("Você perdeu todas as chances! Game Over.")
                     time.sleep(5)
@@ -162,7 +160,6 @@ def level1(usuario):
                 chances -= 1
                 print(f"Chances restantes: {chances}")
                 time.sleep(2)
-                break
                 if chances == 0:
                     print("Você perdeu todas as chances! Game Over.")
                     time.sleep(5)
@@ -281,7 +278,6 @@ def level2(usuario):
                 chances -= 1
                 print(f"Chances restantes: {chances}")
                 time.sleep(2)
-                break
                 if chances == 0:
                     print("Você perdeu todas as chances! Game Over.")
                     time.sleep(5)
@@ -317,7 +313,6 @@ def level2(usuario):
                 chances -= 1
                 print(f"Chances restantes: {chances}")
                 time.sleep(2)
-                break
                 if chances == 0:
                     print("Você perdeu todas as chances! Game Over.")
                     time.sleep(5)
@@ -354,7 +349,6 @@ def level2(usuario):
                 chances -= 1
                 print(f"Chances restantes: {chances}")
                 time.sleep(2)
-                break
                 if chances == 0:
                     print("Você perdeu todas as chances! Game Over.")
                     time.sleep(5)
@@ -467,7 +461,6 @@ def level3(usuario):
                 chances -= 1
                 print(f"Chances restantes: {chances}")
                 time.sleep(2)
-                break
                 if chances == 0:
                     print("Você perdeu todas as chances! Game Over.")
                     time.sleep(5)
@@ -503,7 +496,6 @@ def level3(usuario):
                 chances -= 1
                 print(f"Chances restantes: {chances}")
                 time.sleep(2)
-                break
                 if chances == 0:
                     print("Você perdeu todas as chances! Game Over.")
                     time.sleep(5)
@@ -540,7 +532,6 @@ def level3(usuario):
                 chances -= 1
                 print(f"Chances restantes: {chances}")
                 time.sleep(2)
-                break
                 if chances == 0:
                     print("Você perdeu todas as chances! Game Over.")
                     time.sleep(5)
