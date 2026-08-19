@@ -372,3 +372,4 @@ def levels():
     conn.commit()
 
 levels()
+print(f"Fim do jogo! Pontuação final: {pontos} pontos")
