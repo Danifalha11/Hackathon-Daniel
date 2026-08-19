@@ -67,6 +67,7 @@ def level1(usuario):
                 print("escolha uma opção válida\n")
                 time.sleep(1)
                 continue
+           
 
         
         while True:
@@ -137,6 +138,7 @@ def level1(usuario):
                 break
             else:
                 print("escolha uma opção válida\n")
+                time.sleep(1)
                 continue
 
         
@@ -172,6 +174,7 @@ def level1(usuario):
                 break
             else:
                 print("escolha uma opção válida\n")
+                time.sleep(1)
                 continue
 
         sql = "UPDATE usuarios SET pontuacao = %s WHERE id_user = %s"
