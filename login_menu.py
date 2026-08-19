@@ -3,6 +3,7 @@ import os
 import time
 from SQLxPython import *
 from cadastros import *
+from atualizar import *
 from deletar import *
 from levels import *
 from lista import *
@@ -57,8 +58,9 @@ def menuUser(usuario):
         print("\n1 - ReciclaQuiz")
         print("2 - Ver perfil")
         print("3 - Ver classificação")
-        print("4 - Deletar perfil")
-        print("5 - Sair")
+        print("4 - Atualizar perfil")
+        print("5 - Deletar perfil")
+        print("6 - Sair")
         opcao = input()
         
         if opcao == "1":
@@ -69,9 +71,11 @@ def menuUser(usuario):
         elif opcao == "3":
             listaUsers()
         elif opcao == "4":
+            atualizarUser(id_user=usuario['id_user'])
+        elif opcao == "5":
             deletarUsuario(id_user=usuario['id_user'])
             break
-        elif opcao == "5":
+        elif opcao == "6":
             print("Saindo...")
             time.sleep(2)
             break

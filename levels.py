@@ -88,6 +88,7 @@ def level1(usuario):
                 chances -= 1
                 print(f"Chances restantes: {chances}")
                 time.sleep(2)
+                break
                 if chances == 0:
                     print("Você perdeu todas as chances! Game Over.")
                     time.sleep(5)
@@ -119,11 +120,12 @@ def level1(usuario):
                 print(f"Pontuação atual: {pontos}")
                 time.sleep(2)
                 break
-            elif resposta in ["a", "c"]:
+            elif resposta1_4 in ["a", "c"]:
                 print("resposta errada\n")
                 chances -= 1
                 print(f"Chances restantes: {chances}")
                 time.sleep(2)
+                break
                 if chances == 0:
                     print("Você perdeu todas as chances! Game Over.")
                     time.sleep(5)
@@ -155,11 +157,12 @@ def level1(usuario):
                 print(f"Pontuação atual: {pontos}")
                 time.sleep(2)
                 break
-            elif resposta in ["b", "c"]:
+            elif resposta1_5 in ["a", "b"]:
                 print("resposta errada\n")
                 chances -= 1
                 print(f"Chances restantes: {chances}")
                 time.sleep(2)
+                break
                 if chances == 0:
                     print("Você perdeu todas as chances! Game Over.")
                     time.sleep(5)
