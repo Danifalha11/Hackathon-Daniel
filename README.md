@@ -1,4 +1,4 @@
-# Hackathon-Daniel
+# Hackathon-Daniel-Caio-Vicente
 
 # COMO USAR O PROGRAMA:
 # Primeiro aperte as teclas Ctrl + J para abrir o terminal, nele digite "pip install mysql-connector-python" e aperte a tecla Enter. Após isso, abra o arquivo SQLxPython.py e rode ele, caso nada apareça, deu tudo certo. Depois de tudo isso, você pode entrar na main.py e rodar.
@@ -32,3 +32,5 @@
 # AGRADECIMENTOS ESPECIAIS
 # - Banca Avaliativa
 # - Senac Palhoça
+
+# OBS: Como o criador do repositório, e aquele que logou no notebook, foi o Daniel, a maioria dos comites vão ser da conta dele, porém multiplas partes do programa foram feitas por todos da equipe, no notebook da conta do Daniel. Obrigado
